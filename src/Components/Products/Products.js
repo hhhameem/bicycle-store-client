@@ -24,12 +24,10 @@ function Products() {
       <Navigation></Navigation>
       <div className='my-5 container'>
         <h1 className='mb-5'>
-          <span style={{ borderBottom: "5px solid #3d8982" }}>
-            Our Products
-          </span>
+          Our <span className='heading-text'>Products</span>
         </h1>
         {products.length < 1 ? (
-          <Spinner animation='border' />
+          <Spinner animation='border' className='spinner-color' />
         ) : (
           <Row xs={1} md={2} lg={3} className='g-4'>
             {products.map((product) => (

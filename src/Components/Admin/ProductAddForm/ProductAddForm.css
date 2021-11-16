@@ -1,0 +1,5 @@
+.form-box-shadow {
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 16px 1px #000000;
+  box-shadow: 3px 3px 16px 1px #000000;
+}

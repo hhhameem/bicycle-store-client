@@ -1,0 +1,78 @@
+.bg-black {
+  background-color: rgb(0, 0, 0);
+  padding: 5px;
+  border-radius: 5px;
+}
+.banner-highlighted-text {
+  border-bottom: 5px solid rgb(236, 54, 109);
+}
+.btn-banner {
+  padding: 10px 20px;
+  background: rgb(236, 54, 109);
+  border-top: 2px solid rgb(236, 54, 109);
+  border-right: 2px solid rgb(236, 54, 109);
+  border: none;
+  border-left: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  font-weight: bolder;
+  transition: 0.5s ease-in-out;
+}
+.btn-banner:hover {
+  padding: 10px 20px;
+  background: rgb(255, 255, 255);
+  border-right: 2px solid rgb(255, 255, 255);
+  border-top: 2px solid rgb(255, 255, 255);
+  border: none;
+  border-left: 2px solid rgb(236, 54, 109);
+  border-bottom: 2px solid rgb(236, 54, 109);
+  color: rgb(236, 54, 109);
+}
+.btn-banner-text {
+  color: rgb(255, 255, 255);
+  text-decoration: "none";
+}
+.btn-banner-text:hover {
+  color: rgb(236, 54, 109);
+  text-decoration: "none";
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 450px) {
+  .carousel-item-height {
+    background-image: url("../../images/bicycleRed.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 300px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .carousel-item-height {
+    background-image: url("../../images/bicycleRed.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 350px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .carousel-item-height {
+    background-image: url("../../images/bicycleRed.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 350px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .carousel-item-height {
+    background-image: url("../../images/bicycleRed.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 500px;
+  }
+}

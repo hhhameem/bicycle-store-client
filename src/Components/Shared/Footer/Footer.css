@@ -1,0 +1,22 @@
+.text-small {
+  font-size: 0.9rem;
+}
+.decoration-none {
+  color: inherit;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+Link:hover,
+Link:focus {
+  text-decoration: none;
+}
+
+footer {
+  background: #212529;
+}

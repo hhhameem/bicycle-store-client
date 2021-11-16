@@ -1,0 +1,47 @@
+.heading-text {
+  border-bottom: 5px solid rgb(236, 54, 109);
+  color: rgb(236, 54, 109);
+}
+
+.btn-custom {
+  color: rgb(255, 255, 255);
+  background-color: rgb(236, 54, 109);
+  border-radius: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  transition: 0.5s ease-in-out;
+}
+.btn-custom:hover {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(236, 54, 109);
+  color: rgb(236, 54, 109);
+}
+
+.product-card-heading {
+  border-bottom: 2px solid rgb(236, 54, 109);
+  color: rgb(236, 54, 109);
+}
+.price {
+  color: rgb(236, 54, 109);
+}
+
+.card img {
+  transition: transform 0.5s ease-in-out;
+}
+.card:hover img {
+  transform: scale(0.95);
+}
+
+.spinner-color {
+  color: rgb(236, 54, 109);
+}
+
+.dashboard-card-border {
+  border: 1px solid rgb(236, 54, 109);
+}
+.dashboard-card-header {
+  background: rgb(236, 54, 109);
+  color: rgb(255, 255, 255);
+}
+.myOrder-delete-hover:hover {
+  color: rgb(236, 54, 109);
+}

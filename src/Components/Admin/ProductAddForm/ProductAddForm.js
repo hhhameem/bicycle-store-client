@@ -6,11 +6,22 @@ import "./ProductAddForm.css";
 const axios = require("axios");
 
 function ProductAddForm() {
-  const { toastSuccess, toastError } = useToastify();
+  const { toastSuccess, toastError, toastWarn } = useToastify();
   const { register, handleSubmit, reset } = useForm();
   const [clicked, setClicked] = useState(false);
+  const [type, setType] = useState("");
+  const [size, setSize] = useState(0);
+  const [imageUrl, setImageUrl] = useState("");
+
   const onSubmit = (data) => {
     setClicked(true);
+    if (type === "" || size === 0) {
+      toastError("You must submit a .PNG file and file size less than 1 mb");
+      setClicked(false);
+      return;
+    }
+    upload(data.productImage[0]);
+    data.productImage = imageUrl;
     axios
       .post("https://aqueous-escarpment-00747.herokuapp.com/product", data)
       .then(function (response) {
@@ -23,6 +34,35 @@ function ProductAddForm() {
       })
       .finally(() => setClicked(false));
     reset();
+  };
+
+  const upload = (img) => {
+    var formData = new FormData();
+    formData.append("image", img);
+    axios
+      .post(`https://api.imgbb.com/1/upload?&key=API_KEY`, formData)
+      .then(function (response) {
+        if (response.data.data.url) {
+          setImageUrl(response.data.data.url);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const handleChange = (e) => {
+    setType("");
+    setSize(0);
+    const img = e.target.files[0];
+    const imgType = img.type.split("/")[1];
+
+    if (img.size > 1048576 || imgType !== "png") {
+      toastWarn("Please select Only .PNG file and less then 1 mb file size ");
+      return;
+    }
+    setType(imgType);
+    setSize(img.size);
   };
 
   return (
@@ -78,10 +118,14 @@ function ProductAddForm() {
                 </Form.Label>
                 <Col sm='8'>
                   <Form.Control
-                    type='url'
+                    type='file'
                     {...register("productImage", { required: true })}
-                    placeholder='Image Link'
+                    accept='image/png'
+                    onChange={(e) => handleChange(e)}
                   />
+                  <small className='d-flex text-warning'>
+                    *Only (.png) file and highest 1mb size
+                  </small>
                 </Col>
               </Form.Group>
               <Form.Group
